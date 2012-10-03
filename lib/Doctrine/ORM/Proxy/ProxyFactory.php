@@ -250,7 +250,7 @@ class ProxyFactory
 
                 $methods .= $parameterString . ')';
                 $methods .= "\n" . '    {' . "\n";
-                if ($this->isShortIdentifierGetter($method, $class)) {
+                /*if ($this->isShortIdentifierGetter($method, $class)) {
                     $identifier = lcfirst(substr($method->getName(), 3));
 
                     $cast = in_array($class->fieldMappings[$identifier]['type'], array('integer', 'smallint')) ? '(int) ' : '';
@@ -258,7 +258,7 @@ class ProxyFactory
                     $methods .= '        if ($this->__isInitialized__ === false) {' . "\n";
                     $methods .= '            return ' . $cast . '$this->_identifier["' . $identifier . '"];' . "\n";
                     $methods .= '        }' . "\n";
-                }
+                }*/
                 $methods .= '        $this->__load();' . "\n";
                 $methods .= '        return parent::' . $method->getName() . '(' . $argumentString . ');';
                 $methods .= "\n" . '    }' . "\n";
